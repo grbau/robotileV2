@@ -1,0 +1,50 @@
+{
+  "HOME": {
+    "BANNER_TITLE": "Gagnez en efficacité sur vos chantiers",
+    "BANNER_SUBTITLE": "Nos solutions aident vos équipes dans la pose de carrelage et dallage. Obtenez un travail soigné, rapide, précis et avec un minimum d'efforts.",
+    "BANNER_CTA" : "Demandez un devis",
+    "ADVANTAGE_TITLE" : "Nos avantages produits",
+    "RAPIDITY_TITLE": "Rapidité",
+    "RAPIDITY_CONTENT" : "Pose sur de grandes surfaces. Les gestes conservent leur fluidité et leur rapidité d’exécution",
+    "CONFORT_TITLE": "Confort",
+    "CONFORT_CONTENT": "Votre posture reste confortable. Les efforts sont réduits",
+    "PRECISION_TITLE" : "Précision",
+    "PRECISION_CONTENT" : "Le déplacement des éléments s’effectue en toute légèreté pour un geste toujours précis",
+    "MOBILITY_TITLE" : "Mobilité",
+    "MOBILITY_CONTENT" : "Equipements nomades. Montage et démontage rapides. Déplacement par une personne seule possible",
+    "SEE_ALL" : "Voir toutes les fonctionnalités",
+    "CARLITA_TITLE" : "Carlita, l’équipement pour carreleurs",
+    "CARLITA_CONTENT" : "Posez jusqu’à 75m2 par jour de façon simple et efficace. Carlita est multi-formats, jusqu’à 30kg par élément. Carlita offre légèreté d’utilisation et maniabilité. Le compagnon poseur conserve sa précision de pose et sa rapidité d’exécution",
+    "CARLITA_CTA" : "Découvrir carlita",
+    "TC_TITLE" : "Découvrez nos Tires-colle",
+    "TC_CONTENT" : "Un outil qui permet une application 4 fois plus rapide qu’avec un platoir manuel",
+    "TC_CTA" : "Voir plus"
+  },
+  "CARLITA": {
+    "BANNER_TITLE": "Santé et sécurité des équipes. Confort des utilisateurs.",
+    "BANNER_SUBTITLE": "Carlita est une machine nomade et légère d'utilisation",
+    "TECHNICAL_SHEET": "assets/images/carlita/fiche-technique.jpeg",
+    "DOUBLE_GLUING": "Double encollage :",
+    "TECHNICAL_SHEET_TITLE": "Fiche technique :"
+  },
+
+  "GLUEPULLER": {
+    "BANNER_TITLE": "Réduction des efforts. Rapidité d'exécution. Régularité de l'ancollage",
+    "BANNER_SUBTITLE": "Bénéficiez d'une application 4 fois plus rapide qu'avec un platoir",
+    "TECHNICAL_SHEET": "assets/images/carlita/fiche-technique.jpeg",
+    "DOUBLE_GLUING": "Double encollage :",
+    "TECHNICAL_SHEET_TITLE": "Fiche technique :"
+  },
+  "CONTACT": {
+    "CONTACT_US": "Contactez nous",
+    "CONTACT_NAME": "Nom",
+    "CONTACT_PHONE": "Téléphone",
+    "CONTACT_SEND": "Votre message a bien été envoyé",
+    "CONTACT_HOME": "Retour à la page d'accueil",
+    "CONTACT_SEND_BUTTON": "Envoyer",
+    "CONTACT_NAME_ERROR": "Le nom est obligatoire",
+    "CONTACT_EMAIL_MANDATORY" : "L'email est obligatoire",
+    "CONTACT_EMAIL_ERROR" : "L'email n'est pas valide",
+    "CONTACT_MSG_ERROR" : "Veuillez saisir un message"
+  }
+}

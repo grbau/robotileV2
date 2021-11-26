@@ -1,0 +1,296 @@
+@import '../../styles/variables';
+@import '../../styles/atoms/mixins';
+.homeBanner {
+  $namespace: &;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: calc(100vh - #{$headerHeight});
+  background-size: cover;
+  background-position: top;
+
+  &__title  {
+    max-width: 70%;
+    color: $black;
+    font-size: rem-calc(25);
+    background: $white;
+    padding: $space-s;
+    max-height: 180px;
+    margin-top: 4%;
+
+    @include breakpoint(s) {
+      font-size: rem-calc(30);
+      max-width: 40%;
+    }
+
+    @include breakpoint(m) {
+      font-size: rem-calc(35);
+    }
+
+    & + #{$namespace}__subTitle {
+      margin-top: $space-m;
+    }
+  }
+
+  &__subTitle  {
+    max-width: 60%;
+    color: $black;
+    font-size: rem-calc(20);
+    background: $white;
+    padding: $space-s;
+
+    & + #{$namespace}__btn {
+      margin-top: 60px;
+    }
+  }
+
+  &__btn {
+    margin-left: $space-xl;
+  }
+}
+
+.rbtBenefit {
+  $namespace: &;
+
+  padding: 20px;
+  background: $grey-light;
+
+  @include breakpoint(m) {
+    padding: 60px 40px;
+  }
+
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: -20px;
+    margin: auto;
+
+    @include breakpoint(m) {
+      max-width: 60%;
+    }
+  }
+
+  &__item {
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    word-break: break-word;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    align-items: stretch;
+
+    @include breakpoint(s) {
+      max-width: 50%;
+    }
+
+    @include breakpoint(m) {
+      max-width: 50%;
+    }
+  }
+
+  &__itemWrapper {
+    padding: 40px;
+    background: $white;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__itemImg {
+    display: block;
+    height: 75px;
+
+    > img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      max-width: 90px;
+      display: block;
+    }
+  }
+
+  &__itemTitle {
+    color: $black;
+    margin: 10px 0 20px 0;
+    font-size: rem-calc(22);
+  }
+
+  &__itemDescription {
+    font-size: rem-calc(16);
+  }
+
+  &__btn {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+}
+
+.rbtNews {
+  $namespace: &;
+
+  padding: 20px;
+  background: $grey-light;
+
+  @include breakpoint(m) {
+    padding: 40px 40px 40px 0;
+
+    &.-full {
+      padding: 40px 0;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    &.-full {
+      justify-content: flex-end;
+    }
+  
+    &.-auto {
+        width: 100%;
+        align-items: stretch;
+
+        @include breakpoint(m) {
+          max-width: 70%;
+          margin: auto;
+        }
+      
+    }
+  }
+
+  
+
+  &__media {
+    width: 100%;
+
+    @include breakpoint(m) {
+      &:not(.-big) {
+        width: calc(40% - 60px);
+        margin-right: -60px;
+        z-index: 1;
+      }
+
+      &.-big {
+        width: 60%;
+      }
+    }
+    
+    
+
+    video {
+      width: 100%;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__contentWrapper {
+    background: $grey;
+    width: 100%;
+    padding: 5%;
+
+    &.-noBackground {
+      background: none;
+    }
+
+    @include breakpoint(m) {
+      &:not(.-small) {
+        width: 60%;
+        padding: 5% 5% 5% 10%;
+      }
+
+      &.-small {
+        width: 40%;
+      }
+    }
+
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__contentTitle {
+    color: $black;
+    font-size: rem-calc(20);
+
+    &.-blue {
+      color: $blue;
+    }
+  }
+
+  &__contentDescription {
+    margin-top: 30px;
+    font-size: rem-calc(15);
+  }
+
+  &__contentBtn {
+    display: flex;
+    margin-top: 30px;
+  }
+
+  &__left,
+  &__right {
+    width: 100%;
+
+    @include breakpoint(m) {
+      width: 50%;
+    }
+
+    &.-content {
+      background: $white;
+      padding: 5%;
+      align-items: center;
+      display: flex;
+
+      &.-noBackground {
+        background: none;
+      }
+
+      @include breakpoint(m) {
+        padding: 0px 20px 0px 20px;
+      }
+    }
+
+    &.-media {
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+  }
+  &.-half {
+    @include breakpoint(m) {
+      max-width: 50%;
+    }
+
+    .rbtNews__media {
+      width: 100%;
+    }
+
+    .rbtNews__content {
+      margin: 20px auto;
+
+      @include breakpoint(m) {
+        text-align: center;
+      }
+
+      p {
+        font-size: rem-calc(15);
+      }
+    }
+  }
+} 

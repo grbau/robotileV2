@@ -1,0 +1,38 @@
+@import '../../../styles/variables';
+@import '../../../styles/atoms/mixins';
+
+.footer {
+
+  &__icons {
+    overflow-x: scroll;
+    -ms-scroll-snap-type: x mandatory;
+    scroll-snap-type: x mandatory;
+    display: grid;
+    grid-template-rows: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    grid-auto-flow: column;
+    align-items: center;
+    width: 100%;
+    grid-gap: 30px;
+    margin: 0;
+    padding: 0;
+    grid-auto-columns: 100px;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__icon {
+    scroll-snap-align: start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    > img {
+      width: 100%;
+    }
+  }
+}

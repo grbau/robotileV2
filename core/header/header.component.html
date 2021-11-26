@@ -1,0 +1,25 @@
+<header class="page-header" id="header">
+  <button class="page-header__burger" (click)="toggleMenu()">
+    <span class="page-header__burger-icon"></span>
+  </button>
+  <div class="page-header__logo">
+    <a class="page-header__btn" routerLink="home">
+      <img alt="logo robotile" src="assets/images/logo-robotile.png" title="logo robotile">
+    </a>
+  </div>
+  <div class="page-header__nav">
+    <a class="page-header__btn" routerLink="carlita" routerLinkActive="active">
+      <span class="page-header__btn-text">Carlita ®</span>
+    </a>
+    <a class="page-header__btn" routerLink="gluepuller" routerLinkActive="active">
+      <span class="page-header__btn-text">Tire-colle</span>
+    </a>
+    
+  </div>
+
+  <div class="page-header__lang">
+    <span *ngFor="let l of locales" (click)="updateLocale(l.value)">
+      <img src="{{ l.url }}" />
+    </span>
+  </div>
+</header>

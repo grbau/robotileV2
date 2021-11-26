@@ -1,0 +1,94 @@
+<section class="rbt-container section-anchor">
+  <div class="rbt-container__wrapper mt-5 mb-5">
+    <div class="row justify-content-center">
+      <div class="col-md-12 contact">
+        <div class="row">
+          <div class="col-md-5">
+            <h3 class="contact__title">Réserver votre démonstration chantier ou Commander un produit</h3>
+            <p class="contact__desc"><strong>Avec Carlita ou le tire colle Express, vous bénéficiez de solutions nomades et professionnelles
+                qui offrent rapidité et confort à vos équipes.</strong>
+            </p>
+              
+            <ol class="contact__list">
+              <li>Renseignez le formulaire ci-joint pour être contacté.</li>
+              <li>Vous êtes rappelé sous 24h</li>
+              <li>Nos solutions vous seront présentées et nous répondrons à vos questions.</li>
+            </ol>
+                  
+          </div>
+          
+          <div class="col-md-7">
+            <div class="box-container">
+              <form (ngSubmit)="onSubmit()" #contactForm="ngForm" id="contactForm" [hidden]="submitted">
+                <div class="row">
+                  <div class="form__group col-md-6">
+                    <div class="form__field">
+                    <input type="text" name="name" [(ngModel)]="model.name" id="name" required #name="ngModel"
+                      class="form-control form__input" placeholder="{{'CONTACT.CONTACT_NAME' | transloco}}" >
+                      <label for="contactFormName" class="form__label">
+                        Nom
+                      </label>
+                    </div>
+
+                    <div *ngIf="name.invalid && (name.dirty || name.touched)" class="error">
+                      <div *ngIf="name.errors.required">{{'CONTACT.CONTACT_NAME_ERROR' | transloco}}  </div>
+                    </div>
+                    
+                  </div>
+
+                  <div class="form__group col-md-6">
+                    <div class="form__field">
+                    
+                      <input type="text" name="email" id="email"  [(ngModel)]="model.email" #email="ngModel"
+                        class="form-control form__input" placeholder="E-Mail" >
+                        <label for="email" class="form__label">
+                          E-mail
+                        </label>
+                    </div>
+                    <div *ngIf="email.invalid && (email.dirty || email.touched)" class="error">
+                      <div *ngIf="email.errors.required">{{'CONTACT.CONTACT_EMAIL_MANDATORY' | transloco}}</div>
+                      <div *ngIf="email.errors.email">{{'CONTACT.CONTACT_EMAIL_ERROR' | transloco}}</div>
+                    </div>
+                  
+                     
+                  </div>
+                
+                
+                  <div class="form__group col-md-6">
+                    <div class="form__field">
+                      <input type="text" name="phone" id="phone" [(ngModel)]="model.phone" #phone="ngModel"
+                      class="form-control form__input" placeholder="{{'CONTACT.CONTACT_PHONE' | transloco}}"> 
+                      <label for="phone" class="form__label">
+                        Téléphone
+                      </label>
+                    
+                    </div>
+                  </div>
+
+                  <div class="form__group col-md-6">
+                    <div class="form__field"> 
+                      <textarea name="message" id="message" [(ngModel)]="model.message" #message="ngModel" rows="5"
+                      class="form-control" placeholder="Message"></textarea>
+                      <label for="contactFormMessage" class="form__label">
+                        Message
+                      </label>
+                    </div>  
+                    <div *ngIf="message.invalid && (message.dirty || message.touched)" class="error">
+                      <div *ngIf="message.errors.required">{{'CONTACT.CONTACT_MSG_ERROR' | transloco}}</div>
+                    </div>
+                  </div>
+                </div>    
+                <div class="form-group"> <button [disabled]="contactForm.invalid" class="rbt-btn -gold -auto">{{'CONTACT.CONTACT_SEND_BUTTON' | transloco}}</button>
+                </div>
+              </form>
+              <div [hidden]="!submitted" class="contact-message">
+                <h2 class="success">{{'CONTACT.CONTACT_SEND' | transloco}}</h2> <button (click)="gotoHome()"
+                  class="btn btn-info">{{'CONTACT.CONTACT_HOME' | transloco}}</button>
+              </div>
+            </div>
+          </div>    
+        </div>
+      </div>
+    </div>
+  </div>  
+</section>

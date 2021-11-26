@@ -1,0 +1,40 @@
+{
+  "HOME": {
+    "BANNER_TITLE": "Improve your efficiency at construction site",
+    "BANNER_SUBTITLE": "Our solutions help your teams in laying tiling and paving. Get the job done neat, fast, precise and with minimal effort.",
+    "BANNER_CTA" : "Request a quote",
+    "ADVANTAGE_TITLE" : "Our product advantages",
+    "RAPIDITY_TITLE": "Speed",
+    "RAPIDITY_CONTENT" : "Laying on large surfaces. Gestures retain their fluidity and speed of execution",
+    "CONFORT_TITLE": "Comfort",
+    "CONFORT_CONTENT": "The postures remain comfortable. Efforts are reduced",
+    "PRECISION_TITLE" : "Precision",
+    "PRECISION_CONTENT" : "The movement of the elements is carried out very lightly for an always precise gestur",
+    "MOBILITY_TITLE" : "Mobility",
+    "MOBILITY_CONTENT" : "Easy transport. Quick assembly and disassembly. Movement by one person possible",
+    "SEE_ALL" : "See all features",
+    "CARLITA_TITLE" : "Carlita, the equipment for tilers",
+    "CARLITA_CONTENT" : "Lay up to 75m2 per day in a simple and efficient way. Carlita is multi-format, up to 30kg per unit. Carlita offers lightness of use and maneuverability. The companion retains his laying precision and speed of execution.",
+    "CARLITA_CTA" : "Discover Carlita",
+    "TC_TITLE" : "Discover our adhesive spreader",
+    "TC_CONTENT" : "A tool that allows application 4 times faster than with a manual plaster",
+    "TC_CTA" : "See more"
+  },
+  "CARLITA": {
+    "TECHNICAL_SHEET": "assets/images/carlita/technical-sheet.jpeg",
+    "DOUBLE_GLUING": "Double gluing :",
+    "TECHNICAL_SHEET_TITLE": "Technical sheet :"
+  },
+  "CONTACT": {
+    "CONTACT_US": "Contact us",
+    "CONTACT_NAME": "Name",
+    "CONTACT_PHONE": "Phone",
+    "CONTACT_SEND": "Your message has been sent",
+    "CONTACT_HOME": "Back to the homepage",
+    "CONTACT_SEND_BUTTON": "Send",
+    "CONTACT_NAME_ERROR": "The name is mandatory",
+    "CONTACT_EMAIL_MANDATORY" : "email is mandatory",
+    "CONTACT_EMAIL_ERROR" : "email is not valid",
+    "CONTACT_MSG_ERROR" : "Please enter a message"
+  }
+}
