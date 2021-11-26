@@ -1,0 +1,14 @@
+.rbt-news {
+  &__title {
+    margin-bottom: 1.6rem;
+    color: $orange;
+    font-weight: 700;
+  }
+
+  &__media {
+    @media screen and (max-width: 48rem) {
+      order: 1;
+      margin-top: 1.6rem;
+    }
+  }
+}

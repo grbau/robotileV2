@@ -1,0 +1,239 @@
+.dialog {
+  position: absolute;
+  right: 0;
+  left: 0;
+  display: block;
+  overflow: hidden;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  max-width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  max-height: 100%;
+  margin: auto;
+  padding: 0;
+  color: #333;
+  border: none;
+  border-radius: 5px;
+  background: #fff
+}
+
+.dialog.-shadow {
+  box-shadow: 0 0 40px rgba(0, 0, 0, .1), 0 0 10px rgba(0, 0, 0, .25)
+}
+
+.dialog__wrapper {
+  height: 100%;
+  padding: 2rem
+}
+
+.dialog__close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  box-sizing: content-box;
+  width: 15px;
+  height: 15px;
+  padding: 5px;
+  cursor: pointer;
+  opacity: .8
+}
+
+.dialog__close:hover {
+  opacity: 1
+}
+
+.dialog-no-scroll {
+  overflow: hidden
+}
+
+dialog:not([open]) {
+  display: none
+}
+
+dialog+.backdrop,
+dialog::-webkit-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, .3)
+}
+
+dialog+.backdrop,
+dialog::backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, .3)
+}
+
+dialog.-no-backdrop+.backdrop,
+dialog.-no-backdrop::-webkit-backdrop {
+  width: 0;
+  height: 0
+}
+
+dialog.-no-backdrop+.backdrop,
+dialog.-no-backdrop::backdrop {
+  width: 0;
+  height: 0
+}
+
+.panel {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  display: block;
+  overflow: hidden;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  height: 100%;
+  margin: auto;
+  padding: 0;
+  color: #333;
+  border: none;
+  background: #fff
+}
+
+.panel.-fixed {
+  position: fixed
+}
+
+.panel__wrapper {
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100%;
+  box-sizing: border-box
+}
+
+.panel__close {
+  position: absolute;
+  display: none;
+  top: 5px;
+  right: 5px;
+  box-sizing: content-box;
+  width: 15px;
+  height: 15px;
+  padding: 5px;
+  cursor: pointer;
+  opacity: .8
+}
+
+.panel__close:hover {
+  opacity: 1
+}
+
+.panel.origin {
+  &--right {
+    position: fixed;
+    right: 0;
+    left: auto;
+    animation: show-right .3s ease-in-out
+  }
+
+  &--center {
+    position: fixed;
+    right: 0;
+    left: 0;
+    animation: show-center .3s ease-in-out
+  }
+
+  &--left {
+    position: fixed;
+    right: auto;
+    left: 0;
+    animation: show-left .3s ease-in-out;
+  }
+}
+
+._dialog_overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, .3)
+}
+
+.panel-no-scroll {
+  overflow: hidden
+}
+
+@keyframes show-left {
+  0% {
+    transform: translatex(-110%)
+  }
+
+  100% {
+    transform: translatex(0%)
+  }
+}
+
+@keyframes show-right {
+  0% {
+    transform: translatex(110%)
+  }
+
+  100% {
+    transform: translatex(0%)
+  }
+}
+
+@keyframes show-center {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  100% {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes hide-left {
+  0% {
+    transform: translatex(0%)
+  }
+
+  100% {
+    transform: translatex(-110%)
+  }
+}
+
+@keyframes hide-left {
+  0% {
+    transform: translatex(0%)
+  }
+
+  100% {
+    transform: translatex(110%)
+  }
+}
+
+#newAuth .icon-close {
+  font-size: 16px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  padding: 12px 16px;
+  transform: rotate(180deg)
+}
+
+iframe {
+  border: 0;
+  background: none;
+}

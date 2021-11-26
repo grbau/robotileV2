@@ -1,0 +1,21 @@
+#wrapper {
+  position: relative;
+}
+
+.rbt-container {
+
+  &::before,
+  &::after {
+    content: " ";
+    display: table;
+    clear: both;
+  }
+
+  &--orange {
+    background: $orange;
+  }
+}
+
+#main {
+  position: relative;
+}

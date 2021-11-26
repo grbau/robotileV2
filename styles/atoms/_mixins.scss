@@ -1,0 +1,240 @@
+/**********************************************************
+**************media queries breakpoint********************
+**********************************************************/
+
+//Map of breakpoint value
+$breakpoints: (
+    xs: 360px,  // smaller device
+    s: 768px,  // small device
+    m: 1024px, // middle device
+    tab: 1025px, // middle device
+    l: 1200px  // large device
+);
+
+$breakpoints-xs: map-get($breakpoints, 'xs');
+$breakpoints-s: map-get($breakpoints, 's');
+$breakpoints-tab: map-get($breakpoints, 'tab');
+$breakpoints-m: map-get($breakpoints, 'm');
+$breakpoints-l: map-get($breakpoints, 'l');
+
+//Mixin breakpoint
+@mixin breakpoint($bp, $rule: min-width) {
+  $bdValue: if($rule == 'max-width', #{map-get($breakpoints, $bp) - 1}, #{map-get($breakpoints, $bp)});
+  @media screen and (#{$rule}: #{$bdValue}) {
+      @content;
+  }
+}
+
+// Status colors getter
+@function getStatusColor($color) {
+  @return nth(map_get($statusColors, $color), 1);
+}
+
+@function rem-calc($size) {
+  $remSize: $size / 16;
+  @return #{$remSize}rem;
+}
+
+@mixin underlined-link-base {
+  position: relative;
+  text-decoration: none;
+  transition: none $underlineAnimationDuration $underlineAnimationEasing;
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    height: $underlineThickness;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: inherit;
+    transition-duration: (.5 - $underlineAnimationGapPercent / 100%) * $underlineAnimationDuration;
+  }
+
+  &::before {
+    background: $underlineHoverColor;
+    transform: scaleX(0);
+    transform-origin: 0 0;
+    transition-delay: (.5 + $underlineAnimationGapPercent / 100%) * $underlineAnimationDuration;
+  }
+
+  &::after {
+    background: $underlineRestingColor;
+    transform-origin: 100% 0;
+  }
+}
+
+@mixin underlined-link-hover {
+  text-decoration: none;
+  color: $blue;
+
+  &::before {
+    transform: scaleX(1);
+    transition-property: transform;
+  }
+
+  &::after {
+    transform: scaleX(0);
+    transition-property: transform;
+  }
+}
+
+/// Arrow helper mixin
+
+@mixin arrow ($direction, $color: currentcolor, $width: .2rem) {
+  @if $direction == left {
+    transform: rotate(135deg);
+  }
+
+  @else if $direction == right {
+    transform: rotate(-45deg);
+  }
+
+  @else if $direction == top {
+    transform: rotate(-135deg);
+  }
+
+  @else if $direction == down {
+    transform: rotate(45deg);
+  }
+
+  padding: $width;
+  border: solid $color;
+  border-width: 0 $width $width 0;
+  outline: none;
+  background: none;
+  font-size: 0;
+}
+
+/**********************************************************
+**************margin and padding spacing******************
+**********************************************************/
+
+//Map of spacing value
+$spacevalues: ( 
+  xs: 5px,
+  s: 10px,
+  m: 15px,
+  l: 20px,
+  xl: 40px,
+  xxl: 50px,
+  xs-neg: -5px,
+  s-neg: -10px,
+  m-neg: -15px,
+  l-neg: -20px,
+  xl-neg: -40px,
+  xxl-neg: -50px,
+);
+
+//Dispatch all spaces variables
+$space-xs: map-get($spacevalues, "xs");
+$space-s: map-get($spacevalues, "s");
+$space-m: map-get($spacevalues, "m");
+$space-l: map-get($spacevalues, "l");
+$space-xl: map-get($spacevalues, "xl");
+$space-xxl: map-get($spacevalues, "xxl");
+$space-xs-neg: map-get($spacevalues, "xs-neg");
+$space-s-neg: map-get($spacevalues, "s-neg");
+$space-m-neg: map-get($spacevalues, "m-neg");
+$space-l-neg: map-get($spacevalues, "l-neg");
+$space-xl-neg: map-get($spacevalues, "xl-neg");
+$space-xxl-neg: map-get($spacevalues, "xxl-neg");
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+      @content;
+  }
+  &:-moz-placeholder {
+      @content;
+  }
+  &::-moz-placeholder {
+      @content;
+  }
+  &:-ms-input-placeholder {
+      @content;
+  }
+}
+
+@mixin on-focused-field {
+  &:focus{
+    @content;
+  }
+}
+
+@mixin selected-focused-field {
+  &:not(:placeholder-shown),
+  &:focus{
+    @content;
+  }
+}
+
+@mixin init-animation-label($is-not-select: true){
+  @if $is-not-select {
+    @include placeholder {
+      opacity: 0;
+    }
+  }
+  & + .form__label {
+    position: absolute;
+    top: 0;
+    padding: 0 $space-s;
+    transition: 0.3s ease-in-out;
+    margin: 0;
+    line-height: $space-s;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+@mixin launch-animation-label($is-not-select: true){
+  @include selected-focused-field{
+    @if $is-not-select {
+      @include placeholder {
+          opacity: 1;
+      }
+    }
+    & + .form__label {
+      background-color: $white;
+      height: auto;
+      margin: 0 $space-s;
+      top: 0;
+      transform: translateY(0);
+      transition-duration: .2s;
+      transform: translate(0, -0.3em) scale(0.9, 0.9);
+    }
+  }
+}
+
+@mixin border-focused-field($color) {
+  @include on-focused-field {
+    border: 1px solid $color;
+    outline: 0 none;
+    & + .form__label {
+      color: $color;
+    }
+  }
+}
+
+
+// Mixin arrow
+@mixin arrow($direction, $color, $size, $padding) {
+  border: 0 solid $color;
+  border-width: 0 $size $size 0;
+  border-top: none;
+  border-left: none;
+  padding: $padding;
+
+  @if $direction == 'top' {
+    transform: rotate(-135deg);
+  } @else if $direction == 'right' {
+    transform: rotate(-45deg);
+    margin-right: $padding;
+  } @else if $direction == 'bottom' {
+    transform: rotate(45deg);
+  } @else if $direction == 'left' {
+    transform: rotate(135deg);
+    margin-left: $padding;
+  }
+}
